@@ -24,6 +24,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "path": "^0.12.7",
     "peerjs": "^1.2.0"
   }
