@@ -27,7 +27,7 @@ window.onload = function() {
     callnow.addEventListener('click', function() {
         const friendsId = prompt('Your Friend ID');
         
-        navigator.getUserMedia({ video: true, audio: false }, function(stream) {
+        navigator.getUserMedia({ video: true, audio: true }, function(stream) {
             const call = peer.call(friendsId, stream);
 
             call.on('stream', function(stream) {
@@ -40,7 +40,7 @@ window.onload = function() {
 
     // Receive a call
     peer.on('call', function(call) {
-        navigator.getUserMedia({ video: true, audio: false }, function(stream) {
+        navigator.getUserMedia({ video: true, audio: true }, function(stream) {
             call.answer(stream);
 
             call.on('stream', function(stream) {
