@@ -1,13 +1,19 @@
 import Peer from 'peerjs';
 import css from './public/css/styles.css';
 
-import RoomScreen from './src/ui/Room';
+import UIManager from './src/ui/UIManager';
 
 window.onload = function() {
-    RoomScreen.init()
-    this.navigator.getUserMedia({ video: true, audio: true}, (stream) => {
-        RoomScreen.show(stream, stream, () => this.alert('exit call'))
-    }, () => {
+    UIManager.init();
 
+    UIManager.showDialerScreen();
+    UIManager.DialerScreen.setMyId('001-002');
+
+    UIManager.DialerScreen.setOnValidateFunction(() => {
+        this.navigator.getUserMedia({ video: true }, (stream) => {
+            UIManager.showRoomScreen(stream, stream, () => {
+                UIManager.showDialerScreen();
+            });
+        });
     });
 }
