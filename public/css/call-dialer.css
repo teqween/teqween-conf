@@ -1,0 +1,54 @@
+div#call-dialer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #efefef;
+}
+
+div#call-dialer img.logo {
+    width: 192px;
+    display: block;
+    margin: 0 auto;
+}
+
+div#call-dialer h3.title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+div#call-dialer span#my-id {
+    display: block;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+div#call-dialer div.form {
+    width: 320px;
+    margin: 0 auto;
+}
+
+div#call-dialer input#contact-id {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+div#call-dialer button#call-now {
+    display: block;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-weight: bolder;
+    color: white;
+    background: green;
+    margin-bottom: 48px;
+}
+
+div#call-dialer p {
+    text-align: center;
+    color: #333333;
+}

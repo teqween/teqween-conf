@@ -7,17 +7,46 @@
     <title>Teqween Starter Js</title>
   </head>
   <body>
-    <div id="root">
-      <img src="./img/logo.horizontal.png" alt="">
-      <h1>تطوير موقع لمؤتمرات الفيديو</h1>
-      <span id="myid"></span>
-      <br />
-      <video src="" id="webcam"></video>
-      <br />
-      <button id="callnow">الإتصال</button>
-      <br />
-      <p>لتعلم تطوير موقع مشابه تابع دروس من قناة الـ <a href="https://www.youtube.com/channel/UCBTau2cfgBo8TVPj6S3WJNQ">youtube</a>
-      </p>
-    </div>
+    <div class="container">
+
+        <!-- Call Dialer -->
+        <div id="call-dialer" class="hide">
+          <div class="box">
+            <img src="./img/logo.horizontal.png" class="logo">
+            <h3 class="title">موقع لمؤتمرات الفيديو</h3>
+            <span class="my-id" id="my-id">0000-0000-0000-0000</span>
+            <div class="form">
+              <input type="text" class="contact-id" id="contact-id" placeholder="رقم التعريف">
+              <button id="call-now">الإتصال</button>
+            </div>
+            <p>
+              لتعلم تطوير موقع مشابه تابع دروس من قناة الـ 
+              <a href="https://www.youtube.com/channel/UCBTau2cfgBo8TVPj6S3WJNQ">youtube</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Call Alert -->
+        <div id="call-alert" class="hide">
+          <div class="box">
+            <img src="./img/avatar-white.svg" class="call-avatar">
+            <h1 class="contact-name" id="contact-name">91a2620a-34c8-4591-b494-9e86df7cc505</h1>
+            <div class="response">
+              <button id="reject-call">إنهاء</button>
+              <button id="accept-call">رد على المكالمة</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call Room -->
+        <div id="call-room" class="hide">
+          <div class="box">
+            <video src="" autoplay id="contact-video"></video>
+            <video src="" autoplay id="my-video"></video>
+            <button id="close-call">إنهاء الإتصال</button>
+          </div>
+        </div>
+
+      </div>
   </body>
 </html>
