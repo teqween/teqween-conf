@@ -1,9 +1,13 @@
 import Peer from 'peerjs';
 import css from './public/css/styles.css';
 
-import AlertScreen from './src/ui/Alert';
+import RoomScreen from './src/ui/Room';
 
 window.onload = function() {
-    AlertScreen.init()
-    AlertScreen.show('Contact Name', () => this.alert('call accepted'), () => this.alert('call reject'))
+    RoomScreen.init()
+    this.navigator.getUserMedia({ video: true, audio: true}, (stream) => {
+        RoomScreen.show(stream, stream, () => this.alert('exit call'))
+    }, () => {
+
+    });
 }
