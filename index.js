@@ -17,25 +17,22 @@ window.onload = function() {
     });
 
     CallManager.setOnCallReceive((call) => {
-        UIManager.showAlertScreen(call.peer, () => {
-            navigator.getUserMedia({ video: true, audio: true }, (stream) => {
-                call.answer(stream);
-            }, () => {})
+        UIManager.showAlertScreen(call.peerId, () => {
+            call.accept();
         }, () => {
-            UIManager.showDialerScreen();
+            call.close();
         });
     });
 
-    CallManager.setOnCallStart((call, stream) => {
-        navigator.getUserMedia({ video: true, audio: true}, (myStream) => {
-            UIManager.showRoomScreen(stream, myStream, () => {
-                call.close();
-                UIManager.showDialerScreen();
-            })
-        }, () => {});
+    CallManager.setOnCallStart((call) => {
+        UIManager.showRoomScreen(call.contactStream, call.webcamStream, () => {
+            call.close();
+        })
     });
 
     CallManager.setOnCallClose(() => {
         UIManager.showDialerScreen();
-    })
+    });
+
+    window.CallManager = CallManager;
 }
